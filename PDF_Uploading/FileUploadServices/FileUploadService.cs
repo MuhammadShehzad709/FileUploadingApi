@@ -5,10 +5,6 @@ namespace PDF_Uploading.FileUploadServices
     {
         public async Task<string> UploadPdfAsync(IFormFile file)
         {
-            if (file == null || file.Length == 0)
-            {
-                throw new ArgumentNullException(nameof(file));
-            }
             var extension = Path.GetExtension(file.FileName).ToLower();
             if (extension != ".pdf")
             {
